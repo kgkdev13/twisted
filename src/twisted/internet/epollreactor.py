@@ -156,6 +156,7 @@ class EPollReactor(posixbase.PosixReactorBase, posixbase._PollLikeMixin):
                 self._poller.modify(fd, flags)
             else:
                 # Added in #8907 to remove the KeyError
+                # Test push
                 if fd in selectables:
                     del selectables[fd]
                 # See comment above _control call in _add.
